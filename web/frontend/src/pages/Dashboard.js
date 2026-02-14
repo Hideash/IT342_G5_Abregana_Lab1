@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // Optional: clear any stored tokens or session info here
+    alert("Logged out successfully!");
+    navigate("/login");
+  };
 
   useEffect(() => {
     // Fetch user info from backend
